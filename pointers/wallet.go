@@ -1,7 +1,13 @@
 package wallet
 
+import "fmt"
+
 // Bitcoin represents the number of Bitcoins.
 type Bitcoin int
+
+func (b Bitcoin) String() string {
+	return fmt.Sprintf("%d BTC", b)
+}
 
 // Wallet stores the number of Bitcoins.
 type Wallet struct {
