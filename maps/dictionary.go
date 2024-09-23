@@ -1,9 +1,18 @@
 package dictionary
 
-import "errors"
+// Error that can be returned by a Dictionary
+type DictionaryErr string
 
-var ErrNotFound = errors.New("could not find the word you were looking for")
-var ErrWordExists = errors.New("cannot add word because it already exists")
+// Create a dictionary error
+func (e DictionaryErr) Error() string {
+	return string(e)
+}
+
+// Dictionary Errors (Immutable)
+const (
+	ErrNotFound   = DictionaryErr("could not find the word you were looking for")
+	ErrWordExists = DictionaryErr("cannot add word because it already exists")
+)
 
 // Dictionary stores words and their definitions.
 type Dictionary map[string]string
