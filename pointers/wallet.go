@@ -1,16 +1,19 @@
 package wallet
 
+// Bitcoin represents the number of Bitcoins.
+type Bitcoin int
+
 // Wallet stores the number of Bitcoins.
 type Wallet struct {
-	balance int
+	balance Bitcoin
 }
 
 // Balance returns the number of Bitcoins in a wallet.
-func (w *Wallet) Balance() int {
+func (w *Wallet) Balance() Bitcoin {
 	return w.balance
 }
 
-// Deposit adds bitcoins to the wallet.
-func (w *Wallet) Deposit(amount int) {
+// Deposit adds Bitcoins to a wallet.
+func (w *Wallet) Deposit(amount Bitcoin) {
 	w.balance += amount
 }
