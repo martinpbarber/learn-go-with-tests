@@ -23,3 +23,8 @@ func (w *Wallet) Balance() Bitcoin {
 func (w *Wallet) Deposit(amount Bitcoin) {
 	w.balance += amount
 }
+
+// Withdraw removes Bitcoins from a wallet.
+func (w *Wallet) Withdraw(amount Bitcoin) {
+	w.balance -= amount
+}
